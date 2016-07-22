@@ -306,12 +306,12 @@ and open the template in the editor.
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="pages-signin.html">
+                                                <a href="<?= site_url('inicio/abrirpagina/categoria'); ?>">
                                                     Categorías
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="pages-recover-password.html">
+                                                <a href="<?= site_url('inicio/abrirpagina/juego'); ?>">
                                                     Juegos
                                                 </a>
                                             </li>

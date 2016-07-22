@@ -26,7 +26,7 @@ class Inicio extends CI_Controller {
 
     public function index() {
         //$this->load->view('welcome_message');
-        $this->load->setTitle('Test!');        
+        $this->load->setTitle('Test!');
         $this->load->view('inicio_view'); // Aufruf einer normalen View. 
     }
 
@@ -36,7 +36,14 @@ class Inicio extends CI_Controller {
                 $title = 'Plataforma';
                 $pagina = 'intranet/mantenedores/plataforma_view';
                 break;
-
+            case 'categoria':
+                $title = 'Categoría';
+                $pagina = 'intranet/mantenedores/categoria_view';
+                break;
+            case 'juego':
+                $title = 'Juego';
+                $pagina = 'intranet/mantenedores/juego_view';
+                break;
             default:
                 break;
         }
