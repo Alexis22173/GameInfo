@@ -32,4 +32,17 @@ class Plataforma_model extends CI_Model {
         return $query->row();
     }
 
+    public function guardar($parametros, $id) {
+        $sql = "CALL GUARDAR_PLATAFORMA(@_id,?,?,?,?)";        
+        try {
+            $this->db->query("select $id into @_id");
+            $this->db->query($sql, $parametros);
+            $query = $this->db->query("select @_id as newid");
+            $rpta = $query->row()->newid;
+        } catch (Exception $ex) {
+            $rpta = 0;
+        }
+        return $rpta;
+    }
+
 }

@@ -16,13 +16,13 @@
                         <label class="col-md-3 control-label" for="titulo">Título</label>
                         <div class="col-md-6">
                             <input type="hidden" name="id" id="id" value="<?= set_value('titulo', !empty($registro->id) ? $registro->id : 0); ?>">
-                            <input type="text" class="form-control" id="titulo" value="<?= set_value('titulo', !empty($registro->titulo) ? $registro->titulo : ''); ?>">
+                            <input type="text" class="form-control" id="titulo" name="titulo" value="<?= set_value('titulo', !empty($registro->titulo) ? $registro->titulo : ''); ?>">
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-md-3 control-label" for="descripcion">Descripción</label>
                         <div class="col-md-6">
-                            <textarea id="descripcion" class="form-control" rows="3" ><?= set_value('descripcion', !empty($registro->descripcion) ? $registro->descripcion : ''); ?></textarea>
+                            <textarea id="descripcion" name="descripcion" class="form-control" rows="3" ><?= set_value('descripcion', !empty($registro->descripcion) ? $registro->descripcion : ''); ?></textarea>
                         </div>
                     </div>
                     <div class="form-group">

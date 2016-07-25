@@ -69,12 +69,26 @@ class Inicio extends CI_Controller {
 
     public function guardar() {
         $data = $this->do_upload();
+        $id = $this->input->post('id');
         if (!$data['rpta']) {
             $data = $data['mensaje'];
+            $newid = $id;
         } else {
-            $data = '<script>message("Guardado correctamente", "s", "mensaje")</script>';
+            $this->load->model("intranet/plataforma_model");
+            $parametros = array(
+                $this->input->post('titulo'),
+                $this->input->post('descripcion'),
+                $data["nombre"],
+                $this->input->post('estado')
+            );
+            $newid = $this->plataforma_model->guardar($parametros, $id);
+            if ($newid != 0) {
+                $data = '<script>message("Guardado correctamente", "s", "mensaje")</script>';
+            } else {
+                $data = '<script>message("Hubo un error al momento de guardar", "e", "mensaje")</script>';
+            }
         }
-        $this->formplataforma($this->input->post('id'), $data);
+        $this->formplataforma($newid, $data);
     }
 
     public function do_upload() {
@@ -92,7 +106,7 @@ class Inicio extends CI_Controller {
             $data = array('rpta' => FALSE, 'mensaje' => '<script>message("' . $this->upload->display_errors() . '", "w", "mensaje")</script>');
             return $data;
         } else {
-            $data = array('rpta' => TRUE);
+            $data = array('rpta' => TRUE, 'nombre' => $new_name);
             return $data;
         }
     }
