@@ -83,6 +83,8 @@ class Inicio extends CI_Controller {
         $config['max_size'] = 100;
         $config['max_width'] = 1024;
         $config['max_height'] = 768;
+        $new_name = time() . $_FILES["imagen"]['name'];
+        $config['file_name'] = $new_name;
 
         $this->load->library('upload', $config);
 
