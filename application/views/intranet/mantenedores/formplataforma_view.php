@@ -28,6 +28,7 @@
                     <div class="form-group">
                         <label class="col-md-3 control-label">Imagen</label>
                         <div class="col-md-6">
+                            <input type="hidden" name="namefile" value="<?= set_value('namefile', !empty($registro->imagen) ? $registro->imagen : 'default.png'); ?>">
                             <div class="fileupload fileupload-new" data-provides="fileupload">
                                 <div class="input-append">
                                     <div class="uneditable-input">
@@ -37,7 +38,7 @@
                                     <span class="btn btn-default btn-file">
                                         <span class="fileupload-exists">Cambiar</span>
                                         <span class="fileupload-new">Seleccione imagen</span>                                        
-                                        <?= form_upload("imagen"); ?>
+                                        <?= form_upload(array('type' => 'file', 'name' => 'imagen', 'id' => 'imagen')); ?>
                                     </span>
                                     <a href="#" class="btn btn-default fileupload-exists" data-dismiss="fileupload">Quitar</a>
                                 </div>
@@ -68,5 +69,4 @@
         </section>
     </div>
 </div>
-<?=
-!empty($mensaje) ? $mensaje : ''; ?>
+<?= !empty($mensaje) ? $mensaje : ''; ?>

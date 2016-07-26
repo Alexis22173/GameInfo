@@ -68,8 +68,13 @@ class Inicio extends CI_Controller {
     }
 
     public function guardar() {
-        $data = $this->do_upload();
         $id = $this->input->post('id');
+        $imagenname = $this->input->post('namefile');
+        if ($_FILES["imagen"]['name'] == "") {
+            $data = array('rpta' => TRUE, 'nombre' => $imagenname);
+        } else {
+            $data = $this->do_upload();
+        }
         if (!$data['rpta']) {
             $data = $data['mensaje'];
             $newid = $id;
