@@ -14,7 +14,7 @@
 class Plataforma_model extends CI_Model {
 
     public function listado() {
-        $sql = "CALL GET_ALLPLATAFORMAS(0)";
+        $sql = "CALL LISTAR_PLATAFORMAS(0)";
         $query = $this->db->query($sql);
         if ($query->num_rows() > 0) {
             foreach ($query->result() as $fila) :
@@ -27,7 +27,7 @@ class Plataforma_model extends CI_Model {
     }
 
     public function obtener($id) {
-        $sql = "CALL GET_ALLPLATAFORMAS(?)";
+        $sql = "CALL LISTAR_PLATAFORMAS(?)";
         $query = $this->db->query($sql, $id);
         return $query->row();
     }

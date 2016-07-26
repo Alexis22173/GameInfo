@@ -40,12 +40,13 @@ class Inicio extends CI_Controller {
                 break;
             case 'categoria':
                 $title = 'Categoría';
-                //$data['registros'] = array();
+                $this->load->model("intranet/categoria_model");
+                $data['registros'] = $this->categoria_model->listado();
                 $pagina = 'intranet/mantenedores/categoria_view';
                 break;
             case 'juego':
                 $title = 'Juego';
-                //$data['registros'] = array();
+                $data['registros'] = array();
                 $pagina = 'intranet/mantenedores/juego_view';
                 break;
             default:
@@ -57,17 +58,25 @@ class Inicio extends CI_Controller {
 
     public function formplataforma($id, $mensaje = "") {
         $this->load->model("intranet/plataforma_model");
-        if ($id != 0):
+        if ($id != 0) {
             $data['registro'] = $this->plataforma_model->obtener($id);
-        else:
-            $data['registro'] = array();
-        endif;
+        }
         $data['mensaje'] = $mensaje;
         $this->load->setTitle('Plataforma');
         $this->load->view('intranet/mantenedores/formplataforma_view', $data);
     }
 
-    public function guardar() {
+    public function formcategoria($id, $mensaje = "") {
+        $this->load->model("intranet/categoria_model");
+        if ($id != 0) {
+            $data['registro'] = $this->categoria_model->obtener($id);
+        }
+        $data['mensaje'] = $mensaje;
+        $this->load->setTitle('Categoría');
+        $this->load->view('intranet/mantenedores/formcategoria_view', $data);
+    }
+
+    public function guardar_plataforma() {
         $id = $this->input->post('id');
         $imagenname = $this->input->post('namefile');
         if ($_FILES["imagen"]['name'] == "") {
