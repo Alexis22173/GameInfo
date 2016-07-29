@@ -10,7 +10,7 @@
 
                 <h2 class="panel-title">Form Elements</h2>
             </header>
-            <form action="<?= site_url('inicio/guardar_plataforma') ?>" class="form-horizontal form-bordered" enctype="multipart/form-data" method="post">
+            <form action="<?= site_url('mantenedor/guardar_plataforma') ?>" class="form-horizontal form-bordered" enctype="multipart/form-data" method="post">
                 <div class="panel-body">                
                     <div class="form-group">
                         <label class="col-md-3 control-label" for="titulo">Título</label>

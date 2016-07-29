@@ -310,7 +310,7 @@ and open the template in the editor.
                             <nav id="menu" class="nav-main" role="navigation">
                                 <ul class="nav nav-main">
                                     <li>
-                                        <a href="<?= site_url(); ?>">
+                                        <a href="<?= site_url('mantenedor'); ?>">
                                             <i class="fa fa-home" aria-hidden="true"></i>
                                             <span>Inicio</span>
                                         </a>
@@ -329,17 +329,17 @@ and open the template in the editor.
                                         </a>
                                         <ul class="nav nav-children">
                                             <li>
-                                                <a href="<?= site_url('inicio/abrirpagina/plataforma'); ?>">
+                                                <a href="<?= site_url('mantenedor/abrirpagina/plataforma'); ?>">
                                                     Plataformas
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="<?= site_url('inicio/abrirpagina/categoria'); ?>">
+                                                <a href="<?= site_url('mantenedor/abrirpagina/categoria'); ?>">
                                                     Categorías
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="<?= site_url('inicio/abrirpagina/juego'); ?>">
+                                                <a href="<?= site_url('mantenedor/abrirpagina/juego'); ?>">
                                                     Juegos
                                                 </a>
                                             </li>

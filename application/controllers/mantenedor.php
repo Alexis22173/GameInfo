@@ -2,7 +2,7 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Inicio extends CI_Controller {
+class Mantenedor extends CI_Controller {
 
     /**
      * Index Page for this controller.
@@ -27,7 +27,7 @@ class Inicio extends CI_Controller {
     public function index() {
         //$this->load->view('welcome_message');
         $this->load->setTitle('Test!');
-        $this->load->view('inicio_view'); // Aufruf einer normalen View. 
+        $this->load->view('intranet/intranet_view'); // Aufruf einer normalen View. 
     }
 
     public function abrirpagina($param) {
