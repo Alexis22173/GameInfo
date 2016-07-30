@@ -17,6 +17,7 @@ class Publico extends CI_Controller {
 
     function __construct() {
         parent::__construct();
+        $this->load->setLayout('layout/publicmsater_view'); // Auswahl der MasterPage.
     }
 
     public function index() {

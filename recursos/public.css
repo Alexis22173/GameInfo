@@ -1,0 +1,27 @@
+body{
+    color: #fff;
+    background-image: -webkit-gradient(
+        linear,
+        right bottom,
+        left bottom,
+        color-stop(0, #000000),
+        color-stop(1, #014970)
+        );
+    background-image: -o-linear-gradient(left, #000000 0%, #014970 100%);
+    background-image: -moz-linear-gradient(left, #000000 0%, #014970 100%);
+    background-image: -webkit-linear-gradient(left, #000000 0%, #014970 100%);
+    background-image: -ms-linear-gradient(left, #000000 0%, #014970 100%);
+    background-image: linear-gradient(to left, #000000 0%, #014970 100%); 
+}
+
+nav.navcustom{
+    background: rgba(0, 0, 0, 0.3);
+    border-color: transparent;
+}
+
+@media (max-width:768px){
+    .container{
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+}
